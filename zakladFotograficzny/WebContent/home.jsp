@@ -45,7 +45,7 @@
 	<%
 		}
 	%>
-	<a href="logout.jsp"><li>Wyloguj</li></a>
+	<a href="logout.jsp"><button type="button" class="btn btn-success">Wyloguj sie</button></a>
 
 </body>
 </html>
