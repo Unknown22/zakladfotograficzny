@@ -12,9 +12,9 @@ public class User {
 	
 	public User(){
 		
-	};
+	}
 	
-	public User(String login, String password, String firstname, String lastname, String email,
+	public User(String firstname, String lastname, String email, String login, String password, 
 			int id_account_type, int id_department){
 				this.login=login;
 				this.password=password;
