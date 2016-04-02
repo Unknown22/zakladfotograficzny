@@ -16,7 +16,7 @@ private Connection connection;
 		
 		try{  
 
-		System.out.println("LoginDao: Validation....");
+		System.out.println("LoginDao: Validation...");
 		              
 		PreparedStatement ps=connection.prepareStatement(  
 		    "select * from user where login=? and password=?");  
