@@ -10,9 +10,16 @@ public class User {
 	private int id_account_type;
 	private int id_department;
 	
-	User(){
-		
-	}
+	public User(String login, String password, String firstname, String lastname, String email,
+			int id_account_type, int id_department){
+				this.login=login;
+				this.password=password;
+				this.firstname=firstname;
+				this.lastname=lastname;
+				this.email=email;
+				this.id_account_type=id_account_type;
+				this.id_department=id_department;
+			}
 	
 	public String getLogin() {
 		return login;
