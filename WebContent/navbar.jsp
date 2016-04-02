@@ -2,7 +2,7 @@
 				<ul id="navigation">
 					<li><a href="#">Strona Glowna</a></li>
 					<li><a href="#">Link 2</a></li>
-					<li><a href="#">Link 3</a></li>
+					<li><a href="registration.jsp">Rejestracja</a></li>
 					<%
 						if (session.getAttribute("currentSessionUser") != null) {
 					%>

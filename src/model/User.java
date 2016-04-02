@@ -10,6 +10,10 @@ public class User {
 	private int id_account_type;
 	private int id_department;
 	
+	public User(){
+		
+	};
+	
 	public User(String login, String password, String firstname, String lastname, String email,
 			int id_account_type, int id_department){
 				this.login=login;
