@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>ZAKLAD FOTO</title>
-<link rel="stylesheet" type="text/css" href="js/style1.css">
+<link rel="stylesheet" type="text/css" href="css/style1.css">
 
 
 </head>
