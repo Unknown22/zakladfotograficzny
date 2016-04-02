@@ -12,6 +12,7 @@ body{
 	color: black;
 	padding: 0px;
 	margin: 0px;
+	border-radius:20px;
 }
 
 .header h1{
@@ -56,7 +57,10 @@ body{
 	margin: 0px;
     padding-bottom: 5px;
     text-align: center;
+    
 }
+
+
 
 #navigation li a{
 
@@ -68,11 +72,13 @@ body{
 	margin: 0px;
 	padding-right: auto;
 	background-color: #F3843D;
+	border-radius:20px;
 }
 
 #navigation a:hover{
 	background-color: #FF5A0A;
 }
+
 
 .news{
 	width: 150px;

@@ -5,7 +5,6 @@
 <title>ZAKLAD FOTOGRAFICZNY</title>
 <link rel="stylesheet" type="text/css" href="css/style1.css">
 
-
 </head>
 <body>
 
@@ -14,32 +13,14 @@
 	<div class="srodek">
 
 		<div class="lewo">
+		
 			<%@ include file="siteElements/navbar.jsp"%>
 			
 			<%@ include file="siteElements/news.jsp"%>
-			
 
 		</div>
 
 		<div class="wrapper">
-
-			<%
-				if ((session.getAttribute("currentSessionUser") == null)
-						|| (session.getAttribute("currentSessionUser") == "")) {
-			%>
-			<%@ include file="notLogged.jsp"%>
-
-			<%
-				} else {
-			%>
-			<h3>
-				Witaj:
-				<%=session.getAttribute("currentSessionUser")%>,
-			</h3>
-
-			<%
-				}
-			%>
 
 
 		</div>
