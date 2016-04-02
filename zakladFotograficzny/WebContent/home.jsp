@@ -1,51 +1,69 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link
-	href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,100'
-	rel='stylesheet' type='text/css'>
-<link rel="stylesheet"
-	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-<link rel='stylesheet' href='style.css' />
-<title>Zaklad Fotograficzny</title>
+<meta charset="UTF-8">
+<title>ZAKLAD FOTO</title>
+<link rel="stylesheet" type="text/css" href="js/style1.css">
+
+
 </head>
 <body>
 
-
-
 	<div class="header">
-		<div class="container">
-			<h1>Zaklad Fotograficzny</h1>
-		</div>
+		<h1>ZAKLAD FOTOGRAFICZNY ALPHA</h1>
 	</div>
 
+	<div class="srodek">
 
+		<div class="lewo">
+			<%@ include file="navbar.jsp"%>
+			
 
-	<%
-		if ((session.getAttribute("currentSessionUser") == null)
-				|| (session.getAttribute("currentSessionUser") == "")) {
-	%>
-	<%@ include file="notLogged.jsp"%>
+			<div class="news">
+				<p>Newsy</p>
 
-	<%
-		} else {
-	%>
+				<%
+					if (session.getAttribute("currentSessionUser") != null) {
+				%>
+				<p>
+					Witaj:
+					<%=session.getAttribute("currentSessionUser")%>
+				</p>
 
+				<%
+					}
+				%>
 
-	<div class="main">
-		<div class="container">
+			</div>
+
+		</div>
+
+		<div class="wrapper">
+
+			<%
+				if ((session.getAttribute("currentSessionUser") == null)
+						|| (session.getAttribute("currentSessionUser") == "")) {
+			%>
+			<%@ include file="notLogged.jsp"%>
+
+			<%
+				} else {
+			%>
 			<h3>
 				Witaj:
 				<%=session.getAttribute("currentSessionUser")%>,
 			</h3>
 
+			<%
+				}
+			%>
+
 
 		</div>
+
 	</div>
-	<%
-		}
-	%>
-	<a href="logout.jsp"><button type="button" class="btn btn-success">Wyloguj sie</button></a>
+
+	<div class="footer">@2016 Stopka</div>
 
 </body>
 </html>
