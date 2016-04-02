@@ -1,13 +1,26 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Rejestracja</title>
+<meta charset="UTF-8">
+<title>ZAKLAD FOTOGRAFICZNY</title>
+<link rel="stylesheet" type="text/css" href="css/style1.css">
+
 </head>
 <body>
-	<div class="wrapper">
+
+	<%@ include file="siteElements/header.jsp"%>
+
+	<div class="srodek">
+
+		<div class="lewo">
+		
+			<%@ include file="siteElements/navbar.jsp"%>
+			
+			<%@ include file="siteElements/news.jsp"%>
+
+		</div>
+
+		<div class="wrapper">
 		Nowy uzytkownik:
 		<form action='UserController' method="post" name="Registration_Form" class="form-registration">
 			  
@@ -19,6 +32,12 @@
 			 
 			  <button name="Registration" type="submit" value="Submit">Zarejestruj</button>  			
 		</form>
+
+		</div>
+
 	</div>
+
+	<%@ include file="siteElements/footer.jsp"%>
+
 </body>
 </html>
