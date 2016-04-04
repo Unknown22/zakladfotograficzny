@@ -21,7 +21,7 @@
 		</div>
 
 		<div class="wrapper">
-		Nowy uzytkownik:
+		<p>Nowy uzytkownik:</p>
 		<form action='UserController' method="post" name="Registration_Form" class="form-registration">
 			  
 			  <input type="text" class="form-control" name="firstname" placeholder="Imie" required="" autofocus="" /></br>

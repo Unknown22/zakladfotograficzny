@@ -1,8 +1,8 @@
 <div class="nav">
 	<ul id="navigation">
-		<li><a href="#">Strona Glowna</a></li>
+		<li><a href="home.jsp">Strona Glowna</a></li>
 		<li><a href="#">Link 2</a></li>
-		<li><a href="registration.jsp">Rejestracja</a></li>
+		
 		<%
 			if (session.getAttribute("currentSessionUser") != null) {
 		%>
@@ -11,6 +11,7 @@
 			} else {
 		%>
 		<li><a href="login.jsp">Zaloguj sie</a></li>
+		<li><a href="registration.jsp">Rejestracja</a></li>
 		<%
 			}
 		%>
