@@ -16,6 +16,19 @@ public class UserDaoTest {
 		
 		assertTrue(userDao.createUser(user));
 	}
+	
+	@Test
+	public void getAllUsers(){
+		
+		UserDao userDao=new UserDao();
+		if(userDao.getAllUsers() != null){
+			assertTrue(true);
+		}
+//		
+//		System.out.println("Test, getAllUsers");
+//		System.out.println(userDao.getAllUsers());
+		
+	}
 
 	
 	

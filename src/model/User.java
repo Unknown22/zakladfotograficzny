@@ -1,7 +1,7 @@
 package model;
 
 public class User {
-	//private int id_user;
+	private int id_user;
 	private String login;
 	private String password;
 	private String firstname;
@@ -25,6 +25,18 @@ public class User {
 				this.id_department=id_department;
 			}
 	
+	
+	
+	
+	
+	public int getId_user() {
+		return id_user;
+	}
+
+	public void setId_user(int id_user) {
+		this.id_user = id_user;
+	}
+
 	public String getLogin() {
 		return login;
 	}
@@ -80,4 +92,14 @@ public class User {
 	public void setIdDepartment(int id){
 		this.id_department=id;
 	}
+
+	@Override
+	public String toString() {
+		return "User [id_user=" + id_user + ", login=" + login + ", password=" + password + ", firstname=" + firstname
+				+ ", lastname=" + lastname + ", email=" + email + ", id_account_type=" + id_account_type
+				+ ", id_department=" + id_department + "]";
+	}
+	
+	
+	
 }

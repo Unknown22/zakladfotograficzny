@@ -2,7 +2,11 @@ package dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 import util.DbUtil;
 import model.User;
@@ -43,4 +47,44 @@ public class UserDao {
 		System.out.println("Creating user succesful");
 		return true;
 	}
+	
+	
+	
+	public List<User> getAllUsers(){
+		
+		List<User> users = new ArrayList<User>();
+		
+		try{
+			
+			Statement statement = connection.createStatement();
+            ResultSet rs = statement.executeQuery("select * from user");
+            
+            while (rs.next()){
+            	
+            	User user = new User();
+            	
+            	user.setId_user(rs.getInt("id_user"));
+
+            	user.setFirstname(rs.getString("firstname"));
+            	user.setLastname(rs.getString("lastname"));
+            	user.setEmail(rs.getString("email"));
+            	user.setLogin(rs.getString("login"));
+            	user.setIdAccountType(rs.getInt("id_account_type"));
+            	
+            	users.add(user);
+            	
+            }
+			
+		}catch (SQLException e) {
+			System.out.println("Error - download list of users");
+            e.printStackTrace();
+        }
+		
+		return users;
+		
+	}
+	
+	
+	
+	
 }

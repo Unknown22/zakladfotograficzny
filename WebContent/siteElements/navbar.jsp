@@ -6,7 +6,7 @@
 		<%
 			if (session.getAttribute("currentSessionUser") != null) {
 		%>
-		<li><a href="#">Uzytkownicy</a></li>
+		<li><a href="indexUsers.jsp">Uzytkownicy</a></li>
 		<li><a href="logout.jsp">Wyloguj</a></li>
 		<%
 			} else {

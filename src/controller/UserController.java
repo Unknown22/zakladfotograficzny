@@ -2,6 +2,7 @@ package controller;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -16,14 +17,29 @@ public class UserController extends HttpServlet {
 	private static final long serialVersionUID = -6463179069092857254L;
 	private User user;
 	private UserDao userDao;
+	
+	
 
 	public UserController(){
 		super();
 	}
 	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		String forward = "";
+		String action = request.getParameter("action");
+		
+		 System.out.println("CONTROLLER DO GET");
+		 	 
+		 
+		 if(action.equals("listUsers")){
+			 UserDao dao = new UserDao();
+			 forward = "/listUsers.jsp";
+			 request.setAttribute("users", dao.getAllUsers() );
+		 }
+		 
+		 RequestDispatcher view = request.getRequestDispatcher(forward);
+	     view.forward(request, response);
 	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
