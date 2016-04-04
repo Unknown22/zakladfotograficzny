@@ -18,6 +18,8 @@ public class UserController extends HttpServlet {
 	private User user;
 	private UserDao userDao;
 	
+	private String LIST_USER = "/listUsers.jsp";
+	
 	
 
 	public UserController(){
@@ -28,13 +30,19 @@ public class UserController extends HttpServlet {
 		
 		String forward = "";
 		String action = request.getParameter("action");
-		
+		UserDao dao = new UserDao();
 		 System.out.println("CONTROLLER DO GET");
 		 	 
 		 
 		 if(action.equals("listUsers")){
-			 UserDao dao = new UserDao();
-			 forward = "/listUsers.jsp";
+			 
+			 forward = LIST_USER;
+			 request.setAttribute("users", dao.getAllUsers() );
+			 
+		 }else if(action.equals("delete")){
+			 int id_user = Integer.parseInt(request.getParameter("id_user"));
+			 dao.deleteUser(id_user);
+			 forward = LIST_USER;
 			 request.setAttribute("users", dao.getAllUsers() );
 		 }
 		 

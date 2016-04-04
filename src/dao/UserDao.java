@@ -85,6 +85,21 @@ public class UserDao {
 	}
 	
 	
+	public Boolean deleteUser(int id_user) {
+        try {
+            PreparedStatement preparedStatement = connection
+                    .prepareStatement("delete from user where id_user=?");
+            // Parameters start with 1
+            preparedStatement.setInt(1, id_user);
+            preparedStatement.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+        
+        return true;
+    }
 	
 	
 }
