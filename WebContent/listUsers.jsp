@@ -5,7 +5,7 @@
 <title>ZAKLAD FOTOGRAFICZNY</title>
 <link rel="stylesheet" type="text/css" href="css/style1.css">
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%//mozesz to odkomentowac aby byla tabela z bootstrapa BETA //<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> %>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> 
 
 <link rel="stylesheet" type="text/css" href="css/style1.css">
 </head>

@@ -15,7 +15,7 @@ public class OrderDaoTest {
 		
 		OrderDao dao = new OrderDao();
 		
-		Order order = new Order(1, "Tescik2...", 1, 1, 0);
+		Order order = new Order(1, "Tescik3...", 1, 1, 0);
 		
 		assertTrue(dao.createOrder(order));
 		
