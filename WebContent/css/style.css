@@ -112,13 +112,13 @@ body {
   text-decoration: none;
   background-color: black;
     text-align: center;
+    width: 70%;
 }
 
 .form-signin{
 	padding: 50px;
 	text-align: center;
 	margin:0 auto;
-	width: 500px;
 	max-width: 90%;
 	
   background-color: rgba(0,0,0,.3);
@@ -141,7 +141,7 @@ body {
 }
 
 
-.userListDiv{
+.userListDiv, .regDiv{
 	background-color: rgba(0, 0, 0, 0.3);
 	width: 70%;
 	text-align: center;
@@ -150,4 +150,38 @@ body {
 	
   text-shadow: 0 2px 3px rgba(0,0,0,.4);
 	font-size: larger;
+}
+
+.regDiv{
+	background-color: rgba(0, 0, 0, 0.3);
+	width: 70%;
+	text-align: center;
+	margin:0 auto;
+	color: white;
+	padding: 50px;
+  	text-shadow: 0 2px 3px rgba(0,0,0,.4);
+	font-size: larger;
+	  border-radius: 40px;
+}
+
+
+.form-control{
+	margin-top: 10px;
+	
+}
+
+.regDiv .btn{
+  color: white;
+  background-color: rgba(0,255,188,0.5);
+  font-size:18px;
+  margin: 0 auto;
+  margin-top: 30px;
+  width: 100%;
+  
+}
+
+.regDiv .btn:hover{
+	background-color: rgba(0,0,0,0.5);
+ 	color: rgba(0,255,188,0.5);
+	
 }
