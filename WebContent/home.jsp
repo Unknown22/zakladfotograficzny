@@ -1,52 +1,53 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>ZAKLAD FOTOGRAFICZNY</title>
-<link rel="stylesheet" type="text/css" href="css/style1.css">
-
-
+<link rel="stylesheet"
+	href="https://s3.amazonaws.com/codecademy-content/projects/bootstrap.min.css">
+<link href='https://fonts.googleapis.com/css?family=Merriweather'
+	rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+	<div class="header">
+		<div class="container">
 
-	<%@ include file="siteElements/header.jsp"%>
-
-	<div class="srodek">
-
-		<div class="lewo">
 			<%@ include file="siteElements/navbar.jsp"%>
-			
-			<%@ include file="siteElements/news.jsp"%>
-			
 
 		</div>
+	</div>
 
-		<div class="wrapper">
-
-			<%
-				if ((session.getAttribute("currentSessionUser") == null)
-						|| (session.getAttribute("currentSessionUser") == "")) {
-			%>
-			<%@ include file="notLogged.jsp"%>
-
-			<%
-				} else {
-			%>
-			<h3>
-				Witaj:
-				<%=session.getAttribute("currentSessionUser")%>,
-			</h3>
-
-			<%
-				}
-			%>
-
-
-		</div>
+	<div class="jumb">
+		<%@ include file="siteElements/header.jsp"%>
 
 	</div>
 
-	<%@ include file="siteElements/footer.jsp"%>
+	<div class="supporting">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+					<a href="#" ><img src="https://s3.amazonaws.com/codecademy-content/projects/junction/read.svg" /></a>
+					<h2>Galeria</h2>
+					<p>Zobacz nasze osiagniecia.</p>
+				</div>
+
+				<div class="col-md-4">
+					<a href="#" ><img src="https://s3.amazonaws.com/codecademy-content/projects/junction/write.svg" /></a>
+					<h2>Zloz zamowienie</h2>
+					<p>Wyslij nam swoje zdjecia. Nasi specjaliscji zajma sie ich wywolaniem.</p>
+				</div>
+
+				<div class="col-md-4">
+					<a href="#" ><img src="https://s3.amazonaws.com/codecademy-content/projects/junction/talk.svg" /> </a>
+					<h2>Czat</h2>
+					<p>Porozmawiaj z naszymi konsultantami. Rozwieja Twoje watpliwosci</p>
+				</div>
+			</div>
+
+
+		</div>
+	</div>
+
+
 
 </body>
 </html>

@@ -1,32 +1,29 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>ZAKLAD FOTOGRAFICZNY</title>
-<link rel="stylesheet" type="text/css" href="css/style1.css">
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> 
+<link rel="stylesheet" href="https://s3.amazonaws.com/codecademy-content/projects/bootstrap.min.css">
+<link href='https://fonts.googleapis.com/css?family=Merriweather' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="css/style.css">
 
-<link rel="stylesheet" type="text/css" href="css/style1.css">
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 </head>
 <body>
+	<div class="header">
+		<div class="container">
 
-	<%@ include file="siteElements/header.jsp"%>
-
-	<div class="srodek">
-
-		<div class="lewo">
-		
 			<%@ include file="siteElements/navbar.jsp"%>
-			
-			<%@ include file="siteElements/news.jsp"%>
 
 		</div>
+	</div>
 
-		<div class="wrapper">
+	<div class="jumb">
+		<%@ include file="siteElements/header.jsp"%>
 
-				<div class="container">
+	</div>
 
+	<div class="userListDiv">
+		<div class="container">
+			
 			<h3>Uzytkownicy</h3>
 			<table id="tablepaging"  class="table table-hover">
 				<thead>
@@ -58,16 +55,12 @@
 				
 		<div id="pageNavPosition" style="padding-top: 20px" align="center">
 		</div>
-	</div>
-	
-				
 
 
 		</div>
-
 	</div>
 
-	<%@ include file="siteElements/footer.jsp"%>
+
 
 </body>
 </html>

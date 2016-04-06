@@ -1,27 +1,30 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>ZAKLAD FOTOGRAFICZNY</title>
-<link rel="stylesheet" type="text/css" href="css/style1.css">
-
+<link rel="stylesheet"
+	href="https://s3.amazonaws.com/codecademy-content/projects/bootstrap.min.css">
+<link href='https://fonts.googleapis.com/css?family=Merriweather'
+	rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+	<div class="header">
+		<div class="container">
 
-	<%@ include file="siteElements/header.jsp"%>
-
-	<div class="srodek">
-
-		<div class="lewo">
-		
 			<%@ include file="siteElements/navbar.jsp"%>
-			
-			<%@ include file="siteElements/news.jsp"%>
 
 		</div>
+	</div>
 
-		<div class="wrapper">
-		<p>Nowy uzytkownik:</p>
+	<div class="jumb">
+		<%@ include file="siteElements/header.jsp"%>
+
+	</div>
+
+	<div class="supporting">
+		<div class="container">
+			
+				<p>Nowy uzytkownik:</p>
 		<form action='UserController' method="post" name="Registration_Form" class="form-registration">
 			  
 			  <input type="text" class="form-control" name="firstname" placeholder="Imie" required="" autofocus="" /></br>
@@ -34,10 +37,9 @@
 		</form>
 
 		</div>
-
 	</div>
 
-	<%@ include file="siteElements/footer.jsp"%>
+
 
 </body>
 </html>
