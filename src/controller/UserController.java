@@ -54,6 +54,16 @@ public class UserController extends HttpServlet {
 			dao.deleteUser(id_user);
 			forward = LIST_USER;
 			request.setAttribute("users", dao.getAllUsers());
+		}else if (action.equals("deleteEmp")) {
+			int id_user = Integer.parseInt(request.getParameter("id_user"));
+			dao.deleteUser(id_user);
+			forward = LIST_EMPLOYEES;
+			request.setAttribute("employees", dao.getAllEmployee());
+		}else if (action.equals("deleteCli")) {
+			int id_user = Integer.parseInt(request.getParameter("id_user"));
+			dao.deleteUser(id_user);
+			forward = LIST_CLIENTS;
+			request.setAttribute("clients", dao.getAllClients());
 		}
 
 		RequestDispatcher view = request.getRequestDispatcher(forward);

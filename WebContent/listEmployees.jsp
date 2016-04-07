@@ -49,7 +49,7 @@
 							<td><c:out value="${employee.lastname}" /></td>
 							<td><c:out value="${employee.email}" /></td>
 							<td><c:out value="${employee.login}" /></td>
-							<td><a href="UserController?action=delete&id_user=<c:out value="${employee.id_user}"/>">
+							<td><a href="UserController?action=deleteEmp&id_user=<c:out value="${employee.id_user}"/>">
 								<buttontype="button" class="btn btn-danger btn-sm">Usun</button></a></td>
 						</tr>
 					</c:forEach>

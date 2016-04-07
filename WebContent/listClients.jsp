@@ -51,7 +51,7 @@
 							<td><c:out value="${client.lastname}" /></td>
 							<td><c:out value="${client.email}" /></td>
 							<td><c:out value="${client.login}" /></td>
-							<td><a href="UserController?action=delete&id_user=<c:out value="${client.id_user}"/>"><buttontype="button" class="btn btn-danger btn-sm">Usun</button></a></td>
+							<td><a href="UserController?action=deleteCli&id_user=<c:out value="${client.id_user}"/>"><buttontype="button" class="btn btn-danger btn-sm">Usun</button></a></td>
 							<td><a href="#"/><buttontype="button" class="btn btn-warning btn-sm">Pokaz zamowienia</button></a></td>
 						</tr>
 					</c:forEach>
