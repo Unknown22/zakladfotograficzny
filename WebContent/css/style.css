@@ -48,7 +48,6 @@ body {
 .jumb {
 	position: relative;
 	top: 50px;
-	text-shadow: 0 2px 3px rgba(0, 0, 0, .4);
 	text-align: center;
 	color: white;
 }
@@ -61,7 +60,6 @@ body {
 /* Supporting */
 .supporting {
 	margin-top: 40px;
-	text-shadow: 0 2px 3px rgba(0, 0, 0, .4);
 	display: inline;
 	text-decoration: none;
 	background-color: black;
@@ -102,12 +100,11 @@ body {
 
 .loginDiv {
 	color: white;
-	text-shadow: 0 2px 3px rgba(0, 0, 0, .4);
 	display: inline;
 	text-decoration: none;
 	background-color: black;
 	text-align: center;
-	width: 70%;
+	width: 90%;
 }
 
 .form-signin {
@@ -134,23 +131,21 @@ body {
 
 .userListDiv, .regDiv {
 	background-color: rgba(0, 0, 0, 0.3);
-	width: 70%;
+	width: 90%;
 	text-align: center;
 	margin: 0 auto;
 	color: white;
-	text-shadow: 0 2px 3px rgba(0, 0, 0, .4);
 	font-size: larger;
 	border-radius: 40px;
 }
 
 .regDiv {
 	background-color: rgba(0, 0, 0, 0.3);
-	width: 70%;
+	width: 90%;
 	text-align: center;
 	margin: 0 auto;
 	color: white;
 	padding: 50px;
-	text-shadow: 0 2px 3px rgba(0, 0, 0, .4);
 	font-size: larger;
 	border-radius: 40px;
 }
@@ -171,4 +166,13 @@ body {
 .regDiv .btn:hover {
 	background-color: rgba(0, 0, 0, 0.5);
 	color: rgba(0, 255, 188, 0.5);
+}
+
+.dropdown {
+	padding-top: 20px;
+	text-align: left;
+}
+
+.table tbody tr:hover td, .table tbody tr:hover th {
+    background-color: rgba(0, 0, 0, 0.5);
 }

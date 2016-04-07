@@ -24,8 +24,12 @@
 
 	<div class="userListDiv">
 		<div class="container">
+		
+		<%@ include file="siteElements/manageDropDown.jsp"%>
 			
-			<h3>Uzytkownicy</h3>
+			
+			
+			<h3>Pracownicy</h3>
 			<table id="tablepaging"  class="table table-hover">
 				<thead>
 					<tr>
@@ -34,20 +38,18 @@
 						<th>Nazwisko</th>
 						<th>Email</th>
 						<th>Login</th>
-						<th>Typ konta</th>
 						<th colspan=2>Akcje</th>
 					</tr>
 				</thead>
 				<tbody>
-					<c:forEach items="${users}" var="user">
+					<c:forEach items="${employees}" var="employee">
 						<tr>
-							<td><c:out value="${user.id_user}" /></td>
-							<td><c:out value="${user.firstname}" /></td>
-							<td><c:out value="${user.lastname}" /></td>
-							<td><c:out value="${user.email}" /></td>
-							<td><c:out value="${user.login}" /></td>
-							<td><c:out value="${user.idAccountType}" /></td>
-							<td><a href="UserController?action=delete&id_user=<c:out value="${user.id_user}"/>">
+							<td><c:out value="${employee.id_user}" /></td>
+							<td><c:out value="${employee.firstname}" /></td>
+							<td><c:out value="${employee.lastname}" /></td>
+							<td><c:out value="${employee.email}" /></td>
+							<td><c:out value="${employee.login}" /></td>
+							<td><a href="UserController?action=delete&id_user=<c:out value="${employee.id_user}"/>">
 								<buttontype="button" class="btn btn-danger btn-sm">Usun</button></a></td>
 						</tr>
 					</c:forEach>

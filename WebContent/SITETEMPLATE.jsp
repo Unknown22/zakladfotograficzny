@@ -6,6 +6,10 @@
 <link href='https://fonts.googleapis.com/css?family=Merriweather'
 	rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="css/style.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
 <title>Zaklad Foto</title>
 </head>
 <body>

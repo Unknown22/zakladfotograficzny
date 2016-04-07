@@ -84,6 +84,74 @@ public class UserDao {
 		
 	}
 	
+public List<User> getAllClients(){
+		
+		List<User> users = new ArrayList<User>();
+		
+		try{
+			
+			Statement statement = connection.createStatement();
+            ResultSet rs = statement.executeQuery("select * from user where user.id_account_type = 2");
+            
+            while (rs.next()){
+            	
+            	User user = new User();
+            	
+            	user.setId_user(rs.getInt("id_user"));
+
+            	user.setFirstname(rs.getString("firstname"));
+            	user.setLastname(rs.getString("lastname"));
+            	user.setEmail(rs.getString("email"));
+            	user.setLogin(rs.getString("login"));
+            	user.setIdAccountType(rs.getInt("id_account_type"));
+            	
+            	users.add(user);
+            	
+            }
+			
+		}catch (SQLException e) {
+			System.out.println("Error - download list of users");
+            e.printStackTrace();
+        }
+		
+		return users;
+		
+	}
+
+public List<User> getAllEmployee(){
+	
+	List<User> users = new ArrayList<User>();
+	
+	try{
+		
+		Statement statement = connection.createStatement();
+        ResultSet rs = statement.executeQuery("select * from user where user.id_account_type != 2");
+        
+        while (rs.next()){
+        	
+        	User user = new User();
+        	
+        	user.setId_user(rs.getInt("id_user"));
+
+        	user.setFirstname(rs.getString("firstname"));
+        	user.setLastname(rs.getString("lastname"));
+        	user.setEmail(rs.getString("email"));
+        	user.setLogin(rs.getString("login"));
+        	user.setIdAccountType(rs.getInt("id_account_type"));
+        	
+        	users.add(user);
+        	
+        }
+		
+	}catch (SQLException e) {
+		System.out.println("Error - download list of users");
+        e.printStackTrace();
+    }
+	
+	return users;
+	
+}
+	
 	
 	public Boolean deleteUser(int id_user) {
         try {
