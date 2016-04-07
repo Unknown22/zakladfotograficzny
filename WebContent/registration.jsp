@@ -6,6 +6,7 @@
 <link href='https://fonts.googleapis.com/css?family=Merriweather'
 	rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="css/style.css">
+<title>Zaklad Foto</title>
 </head>
 <body>
 	<div class="header">

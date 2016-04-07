@@ -4,6 +4,7 @@
 <link rel="stylesheet" href="https://s3.amazonaws.com/codecademy-content/projects/bootstrap.min.css">
 <link href='https://fonts.googleapis.com/css?family=Merriweather' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="css/style.css">
+<title>Zaklad Foto</title>
 
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 </head>
