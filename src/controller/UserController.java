@@ -1,6 +1,8 @@
 package controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -84,10 +86,14 @@ public class UserController extends HttpServlet {
 		// String dep=request.getParameter("department");
 		// int integerDep=Integer.parseInt(dep);
 		// user.setIdDepartment(integerDep);
-
+		
 		System.out.println("UserController: received data: " + user);
 		if(isValidEmailAddress(user.getEmail())==false)
 			response.sendRedirect("registration_invalid_email_address.jsp");
+		else if(isThatLoginInDatabase(user.getLogin())==true)
+		{
+			response.sendRedirect("registration_login_duplicated.jsp");
+		}
 		else
 		{
 			userDao.createUser(user);
@@ -110,4 +116,16 @@ public class UserController extends HttpServlet {
 		   }
 		   return false;
 		}
+	
+	public static boolean isThatLoginInDatabase(String login){
+		List<User> users = new ArrayList<User>();
+		UserDao userDao = new UserDao();
+		users=userDao.getAllUsers();
+		for(User user: users)
+		{
+			if(user.getLogin().equals(login))
+				return true;
+		}
+		return false;
+	}
 }
