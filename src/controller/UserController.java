@@ -86,10 +86,14 @@ public class UserController extends HttpServlet {
 		// user.setIdDepartment(integerDep);
 
 		System.out.println("UserController: received data: " + user);
-
-		userDao.createUser(user);
-		System.out.println("User inserted OK");
-		response.sendRedirect("home.jsp");
+		if(isValidEmailAddress(user.getEmail())==false)
+			response.sendRedirect("registration_invalid_email_address.jsp");
+		else
+		{
+			userDao.createUser(user);
+			System.out.println("User inserted OK");
+			response.sendRedirect("home.jsp");
+		}
 	}
 	
 	public static boolean isValidEmailAddress(String email) {
