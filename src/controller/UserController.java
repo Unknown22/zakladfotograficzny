@@ -91,4 +91,19 @@ public class UserController extends HttpServlet {
 		System.out.println("User inserted OK");
 		response.sendRedirect("home.jsp");
 	}
+	
+	public static boolean isValidEmailAddress(String email) {
+		   for(int i=0; i<email.length(); i++)
+		   {
+			   if(email.charAt(i)=='@')
+			   {
+				   for(int j=i; j<email.length(); j++)
+				   {
+					   if(email.charAt(j)=='.')
+						   return true;
+				   }
+			   }
+		   }
+		   return false;
+		}
 }
