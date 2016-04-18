@@ -102,4 +102,36 @@ public class OrderDao {
         return true;
     }
 
+	
+	public Order showOrder(int id_order) {
+		Order order = new Order();
+		
+		try{
+			
+			Statement statement = connection.createStatement();
+			String st = "SELECT * FROM `order` WHERE `order`.`id_order`=" + id_order;
+            ResultSet rs = statement.executeQuery(st);
+            
+            while (rs.next()){
+            	
+            	order.setId(rs.getInt("id_order"));
+            	order.setIdStatus(rs.getInt("id_status"));
+            	order.setCreationTime(rs.getString("creation_time"));
+            	order.setLastEditTime(rs.getString("last_edit_time"));
+            	order.setAddedInfo(rs.getString("adding_information"));
+            	order.setIdPayment(rs.getInt("id_payment"));
+            	order.setIdShippment(rs.getInt("id_shippment"));
+            	order.setIdDepartment(rs.getInt("id_department"));
+            	
+            }
+			
+		}catch (SQLException e) {
+			System.out.println("Error - download more informations about order");
+            e.printStackTrace();
+        }
+		
+		return order;
+
+	}
+
 }

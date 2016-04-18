@@ -31,7 +31,7 @@
 			
 			
 			
-			<h3>Zamowienia</h3>
+			<h3>Zamowienie ID <c:out value="${order.id}"/></h3>
 			<table id="tablepaging"  class="table table-hover">
 				<thead>
 					<tr>
@@ -47,27 +47,24 @@
 					</tr>
 				</thead>
 				<tbody>
-					<c:forEach items="${orders}" var="orders">
 						<tr>
-							<td><c:out value="${orders.id}" /></td>
+							<td><c:out value="${order.id}" /></td>
 							<td>
-								<c:if test = "${orders.idStatus == 1 }">
+								<c:if test = "${order.idStatus == 1 }">
 									<c:out value="Oczekujace"/>
 								</c:if>
-								<c:if test = "${orders.idStatus != 1 }">
+								<c:if test = "${order.idStatus != 1 }">
 									<c:out value="Inne"/>
 								</c:if>
 							</td>
-							<td><c:out value="${orders.creationTime}" /></td>
-							<td><c:out value="${orders.lastEditTime}" /></td>
-							<td><c:out value="${orders.addedInfo}" /></td>
-							<td><c:out value="${orders.idPayment}" /></td>
-							<td><c:out value="${orders.idShippment}" /></td>
-							<td><c:out value="${orders.idDepartment}" /></td>
-							<td><a href="OrderController?action=delete&id_order=<c:out value="${orders.id}"/>"><buttontype="button" class="btn btn-danger btn-sm">Usun</button></a></td>
-							<td><a href="OrderController?action=showMore&id_order=<c:out value="${orders.id}"/> "/><buttontype="button" class="btn btn-warning btn-sm">Pokaz wiecej</button></a></td>
+							<td><c:out value="${order.creationTime}" /></td>
+							<td><c:out value="${order.lastEditTime}" /></td>
+							<td><c:out value="${order.addedInfo}" /></td>
+							<td><c:out value="${order.idPayment}" /></td>
+							<td><c:out value="${order.idShippment}" /></td>
+							<td><c:out value="${order.idDepartment}" /></td>
+							<td><a href="OrderController?action=delete&id_order=<c:out value="${order.id}"/>"><buttontype="button" class="btn btn-danger btn-sm">Usun</button></a></td>
 						</tr>
-					</c:forEach>
 				</tbody>
 			</table>
 				

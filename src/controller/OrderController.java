@@ -22,6 +22,7 @@ public class OrderController extends HttpServlet{
 	private static final long serialVersionUID = -6463179069092857254L;
 	
 	private String LIST_ORDERS = "/listOrders.jsp";
+	private String MORE_ORDER = "/moreOrder.jsp";
 	
 	public OrderController(){
 		super();
@@ -41,10 +42,14 @@ public class OrderController extends HttpServlet{
 			request.setAttribute("orders", orderDao.getAllOrders());
 			
 		} else if (action.equals("delete")) {
-			int id_user = Integer.parseInt(request.getParameter("id_order"));
-			orderDao.deleteOrder(id_user);
+			int id_order = Integer.parseInt(request.getParameter("id_order"));
+			orderDao.deleteOrder(id_order);
 			forward = LIST_ORDERS;
 			request.setAttribute("orders", orderDao.getAllOrders());
+		} else if (action.equals("showMore")){
+			int id_order = Integer.parseInt(request.getParameter("id_order"));
+			forward = MORE_ORDER;
+			request.setAttribute("order", orderDao.showOrder(id_order));
 		}
 
 		RequestDispatcher view = request.getRequestDispatcher(forward);
