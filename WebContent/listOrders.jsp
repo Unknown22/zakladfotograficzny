@@ -50,7 +50,14 @@
 					<c:forEach items="${orders}" var="orders">
 						<tr>
 							<td><c:out value="${orders.id}" /></td>
-							<td><c:out value="${orders.idStatus}" /></td>
+							<td>
+								<c:if test = "${orders.idStatus == 1 }">
+									<c:out value="Oczekujace"/>
+								</c:if>
+								<c:if test = "${orders.idStatus != 1 }">
+									<c:out value="Inne"/>
+								</c:if>
+							</td>
 							<td><c:out value="${orders.creationTime}" /></td>
 							<td><c:out value="${orders.lastEditTime}" /></td>
 							<td><c:out value="${orders.addedInfo}" /></td>
