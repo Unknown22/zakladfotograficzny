@@ -41,8 +41,8 @@
 
 				<div class="col-md-4">
 					<a href="#" ><img src="img/talk.svg" /> </a>
-					<h2>Czat</h2>
-					<p>Porozmawiaj z naszymi konsultantami. Rozwieja Twoje watpliwosci</p>
+					<h2>Pomoc</h2>
+					<p>Wyslij do nas pytanie</p>
 				</div>
 			</div>
 

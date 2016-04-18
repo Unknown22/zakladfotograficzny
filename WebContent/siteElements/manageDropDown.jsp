@@ -8,6 +8,6 @@
 				<ul class="dropdown-menu">
 					<li><a href="indexClients.jsp">Lista Klientow</a></li>
 					<li><a href="indexEmployees.jsp" >Lista Pracownikow</a></li>
-					<li><a href="#">Link #3</a></li>
+					<li><a href="indexOrders.jsp">Lista Zamowien</a></li>
 				</ul>
 			</div>

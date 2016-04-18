@@ -4,8 +4,12 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 import model.Order;
+import model.User;
 import util.DbUtil;
 
 public class OrderDao {
@@ -44,6 +48,40 @@ public class OrderDao {
 		
 		System.out.println("Creating order succesful");
 		return true;
+
+	}
+
+	public List<Order> getAllOrders() {
+		List<Order> orders = new ArrayList<Order>();
+		
+		try{
+			
+			Statement statement = connection.createStatement();
+            ResultSet rs = statement.executeQuery("SELECT * FROM `order` WHERE `order`.`id_status`=1");
+            
+            while (rs.next()){
+            	
+            	Order order = new Order();
+            	
+            	order.setId(rs.getInt("id_order"));
+            	order.setIdStatus(rs.getInt("id_status"));
+            	order.setCreationTime(rs.getString("creation_time"));
+            	order.setLastEditTime(rs.getString("last_edit_time"));
+            	order.setAddedInfo(rs.getString("adding_information"));
+            	order.setIdPayment(rs.getInt("id_payment"));
+            	order.setIdShippment(rs.getInt("id_shippment"));
+            	order.setIdDepartment(rs.getInt("id_department"));
+            	
+            	orders.add(order);
+            	
+            }
+			
+		}catch (SQLException e) {
+			System.out.println("Error - download list of orders");
+            e.printStackTrace();
+        }
+		
+		return orders;
 
 	}
 

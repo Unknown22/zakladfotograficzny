@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import model.User;
+import dao.OrderDao;
 import dao.UserDao;
 
 public class UserController extends HttpServlet {
@@ -23,6 +24,7 @@ public class UserController extends HttpServlet {
 	private String LIST_USER = "/listUsers.jsp";
 	private String LIST_CLIENTS = "/listClients.jsp";
 	private String LIST_EMPLOYEES = "/listEmployees.jsp";
+	private String LIST_ORDERS = "/listOrders.jsp";
 
 	public UserController() {
 		super();
@@ -34,6 +36,7 @@ public class UserController extends HttpServlet {
 		String forward = "";
 		String action = request.getParameter("action");
 		UserDao dao = new UserDao();
+		OrderDao orderDao = new OrderDao();
 		System.out.println("CONTROLLER DO GET");
 
 		if (action.equals("listUsers")) {
@@ -51,6 +54,11 @@ public class UserController extends HttpServlet {
 			forward = LIST_EMPLOYEES;
 			request.setAttribute("employees", dao.getAllEmployee());
 
+		} else if (action.equals("listOrders")){
+			
+			forward = LIST_ORDERS;
+			request.setAttribute("orders", orderDao.getAllOrders());
+			
 		} else if (action.equals("delete")) {
 			int id_user = Integer.parseInt(request.getParameter("id_user"));
 			dao.deleteUser(id_user);

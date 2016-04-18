@@ -11,7 +11,9 @@ public class Order {
 	private int idShippment;
 	private int idDepartment;
 	
-	
+	public Order(){
+		
+	}
 	
 	public Order(int idStatus, String addedInfo, int idPayment, int idShippment, int idDepartment) {
 		
