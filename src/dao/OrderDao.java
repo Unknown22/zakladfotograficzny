@@ -85,4 +85,21 @@ public class OrderDao {
 
 	}
 
+	
+	public Boolean deleteOrder(int id_order) {
+        try {
+            PreparedStatement preparedStatement = connection
+                    .prepareStatement("delete from `order` where `id_order`=?");
+            // Parameters start with 1
+            preparedStatement.setInt(1, id_order);
+            preparedStatement.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+        
+        return true;
+    }
+
 }

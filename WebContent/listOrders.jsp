@@ -57,7 +57,7 @@
 							<td><c:out value="${orders.idPayment}" /></td>
 							<td><c:out value="${orders.idShippment}" /></td>
 							<td><c:out value="${orders.idDepartment}" /></td>
-							<td><a href="OrderController?action=deleteOrder&id_order=<c:out value="${orders.id}"/>"><buttontype="button" class="btn btn-danger btn-sm">Usun</button></a></td>
+							<td><a href="OrderController?action=delete&id_order=<c:out value="${orders.id}"/>"><buttontype="button" class="btn btn-danger btn-sm">Usun</button></a></td>
 							<td><a href="#"/><buttontype="button" class="btn btn-warning btn-sm">Zmien status</button></a></td>
 						</tr>
 					</c:forEach>
