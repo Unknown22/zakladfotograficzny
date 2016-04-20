@@ -21,8 +21,6 @@ public class OrderDao {
 	}
 
 	public boolean createOrder(Order order) {
-
-		boolean status=false;
 		
 		System.out.println("OrderDao: create order...");
 
@@ -44,6 +42,7 @@ public class OrderDao {
 		} catch (SQLException e) {
 			System.out.println("Creating order sql error");
 			e.printStackTrace();
+			return false;
 		}
 		
 		System.out.println("Creating order succesful");
