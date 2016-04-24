@@ -32,7 +32,7 @@ public class PhotoDaoTest {
 	public void downloadPhoto(){
 		PhotoDao dao = new PhotoDao();
 		
-		Photo tempPhoto = dao.getPhotoByIdPhoto(111);
+		Photo tempPhoto = dao.getPhotoByIdPhoto(2);
 		
 		//System.out.println(tempPhoto);			
 		

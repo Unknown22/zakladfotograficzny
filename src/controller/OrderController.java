@@ -2,6 +2,7 @@ package controller;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Enumeration;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -55,5 +56,24 @@ public class OrderController extends HttpServlet{
 		RequestDispatcher view = request.getRequestDispatcher(forward);
 		view.forward(request, response);
 	}
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		
+		
+		System.out.println("\nPassed parameters:");
+		Enumeration<String> paramNames = request.getParameterNames();
+	
+		while (paramNames.hasMoreElements()) {
+			String paramName = (String) paramNames.nextElement();
+			System.out.print(paramName);
+			String paramValue = request.getParameter(paramName);
+			System.out.println("\t" + paramValue);
+		}
+		
+		
+		
+	}
+	
 
 }

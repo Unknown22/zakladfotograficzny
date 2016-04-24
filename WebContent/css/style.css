@@ -107,6 +107,8 @@ body {
 	width: 90%;
 }
 
+
+
 .form-signin {
 	padding: 50px;
 	text-align: center;
@@ -179,4 +181,24 @@ body {
 
 .error{
 	color: red;
+}
+
+.createOrder{
+	padding: 50px;
+	text-align: center;
+	margin: 0 auto;
+	max-width: 90%;
+	background-color: rgba(0, 0, 0, .3);
+	border-radius: 40px;
+}
+
+.createOrder label{
+	color: white;
+	display: block;
+}
+
+.createOrder .bigLabel{
+	color: white;
+	padding-top: 30px;
+	
 }
