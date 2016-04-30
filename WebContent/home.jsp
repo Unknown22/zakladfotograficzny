@@ -34,7 +34,7 @@
 				</div>
 
 				<div class="col-md-4">
-					<a href="#" ><img src="img/write.svg" /></a>
+					<a href="createOrder.jsp" ><img src="img/write.svg" /></a>
 					<h2>Zloz zamowienie</h2>
 					<p>Wyslij nam swoje zdjecia. Nasi specjaliscji zajma sie ich wywolaniem.</p>
 				</div>
