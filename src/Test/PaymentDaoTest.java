@@ -11,7 +11,7 @@ public class PaymentDaoTest {
 	@Test
 	public void test() {
 		PaymentDao paymentDao=new PaymentDao();
-		System.out.println(paymentDao.getAllIncome());
+		System.out.println(paymentDao.getPaymentPrice(1));
 	}
 
 }

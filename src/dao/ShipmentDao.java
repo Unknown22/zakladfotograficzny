@@ -7,20 +7,21 @@ import java.sql.Statement;
 
 import util.DbUtil;
 
-public class PaymentDao {
+public class ShipmentDao {
+
 	private Connection connection;
 
-	public PaymentDao() {
+	public ShipmentDao() {
 		connection = DbUtil.getConnection();
 	}
 	
-	public float getPaymentPrice(int id)
+	public float getshipmentPrice(int id)
 	{
 		float income=0;
 		try{
 			
 			Statement statement = connection.createStatement();
-            ResultSet rs = statement.executeQuery("select * from payment where id_payment='"+id+"'");
+            ResultSet rs = statement.executeQuery("select * from shipment where id_shipment='"+id+"'");
             
             while (rs.next()){
             	float price;
@@ -28,7 +29,7 @@ public class PaymentDao {
             	income+=price;
             }
 		}catch (SQLException e) {
-			System.out.println("Error - download payment");
+			System.out.println("Error - download shipment");
             e.printStackTrace();
         }
 		return income;
