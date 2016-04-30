@@ -7,6 +7,7 @@
 			if (session.getAttribute("currentSessionUser") != null) {
 		%>
 		<li><a href="indexClients.jsp">Zarzadzaj</a></li>
+		<li><a href="PaymentController?">Ksiegowosc</a></li>
 		<li><a href="logout.jsp">Wyloguj</a></li>
 		<%
 			} else {
