@@ -31,12 +31,17 @@
 			  <input type="text" class="form-control" name="firstname" placeholder="Imie" required />
 			  <input type="text" class="form-control" name="lastname" placeholder="Nazwisko" required />
 			  <input type="text" class="form-control" name="email" placeholder="E-mail" required />
+			  <% if(session.getAttribute("error")!=null && session.getAttribute("error").equals("incorrectPassword")){%>
+			  <p class="error">Niepoprawny adres e-mail</p>
+			  <%} %>
 			  <input type="text" class="form-control" name="login" placeholder="Login" required/>
+			   <% if(session.getAttribute("error")!=null && session.getAttribute("error").equals("loginDuplicated")){%>
+			  <p class="error">Login zajety</p>
+			  <%} %>
 			  <input type="password" class="form-control" name="password" placeholder="Haslo" required/>
 			 
 			  <button name="Registration" type="submit" value="Submit" class="btn">Zarejestruj</button>  			
 		</form>
-
 		</div>
 	</div>
 

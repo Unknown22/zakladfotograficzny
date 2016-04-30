@@ -78,6 +78,8 @@ public class UserController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
+		HttpSession sesja=request.getSession(true);
+		sesja.setAttribute("error", null);
 		user = new User();
 		userDao = new UserDao();
 		user.setFirstname(request.getParameter("firstname"));
@@ -92,10 +94,14 @@ public class UserController extends HttpServlet {
 		
 		System.out.println("UserController: received data: " + user);
 		if(isValidEmailAddress(user.getEmail())==false)
-			response.sendRedirect("registration_invalid_email_address.jsp");
+		{
+			sesja.setAttribute("error", "incorrectPassword");
+			response.sendRedirect("registration.jsp");
+		}
 		else if(isThatLoginInDatabase(user.getLogin())==true)
 		{
-			response.sendRedirect("registration_login_duplicated.jsp");
+			sesja.setAttribute("error", "loginDuplicated");
+			response.sendRedirect("registration.jsp");
 		}
 		else
 		{
