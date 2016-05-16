@@ -40,7 +40,7 @@
 				</div>
 
 				<div class="col-md-4">
-					<a href="#" ><img src="img/talk.svg" /> </a>
+					<a href="help.jsp" ><img src="img/talk.svg" /> </a>
 					<h2>Pomoc</h2>
 					<p>Wyslij do nas pytanie</p>
 				</div>

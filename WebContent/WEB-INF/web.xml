@@ -20,7 +20,17 @@
     <servlet-name>LoginController</servlet-name>
     <url-pattern>/LoginController</url-pattern>
   </servlet-mapping>
-  <servlet>
+   <servlet>
+    <description></description>
+    <display-name>HelpController</display-name>
+    <servlet-name>HelpController</servlet-name>
+    <servlet-class>controller.HelpController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>HelpController</servlet-name>
+    <url-pattern>/HelpController</url-pattern>
+  </servlet-mapping>
+    <servlet>
     <description></description>
     <display-name>UserController</display-name>
     <servlet-name>UserController</servlet-name>
