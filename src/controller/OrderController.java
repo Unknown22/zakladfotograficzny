@@ -1,5 +1,6 @@
 package controller;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Enumeration;
@@ -12,10 +13,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import model.Order;
+import model.Photo;
 import model.User;
 import dao.OrderDao;
+import dao.PhotoDao;
 import dao.UserDao;
-
 
 
 public class OrderController extends HttpServlet{
@@ -66,11 +69,55 @@ public class OrderController extends HttpServlet{
 	
 		while (paramNames.hasMoreElements()) {
 			String paramName = (String) paramNames.nextElement();
-			System.out.print(paramName);
+			System.out.print(paramName + ": ");
 			String paramValue = request.getParameter(paramName);
-			System.out.println("\t" + paramValue);
+			System.out.println(paramValue);
 		}
 		
+		
+		OrderDao orderDao = new OrderDao();
+		PhotoDao photoDao = new PhotoDao();
+
+		
+		String paymentS = request.getParameter("payment");
+		String sendingS = request.getParameter("sending");
+		
+		int paymentInt = 1;
+		int sendingInt = 3;
+		
+		if(paymentS.equals("transfer")){
+			paymentInt = 1;
+		}else if(paymentS.equals("cash")){
+			paymentInt = 2;
+		}
+		
+		if(sendingS.equals("courier")){
+			sendingInt = 1;
+		}else if(sendingS.equals("regiLetter")){
+			sendingInt = 2;
+		}else if(sendingS.equals("ekoLetter")){
+			sendingInt = 3;
+		}
+		
+		Order order = new Order(1, request.getParameter("textArea-add_info"), paymentInt, sendingInt, 0); //iddepartamentu trzeba poprawic
+		orderDao.createOrder(order);
+		int tempID = orderDao.getLastIDOrder();
+		
+		String service = request.getParameter("photoCorect");
+		int serviceID = 0;
+		if(service.equals("redEyes")){
+			serviceID= 1;
+		}
+		
+		String fileTyp = " ";
+		
+		String[] temp = request.getParameter("inputFile").split(".", 2);
+		fileTyp = temp[1];
+		
+//		File file = new File(request.getParameter("inputFile"));
+		
+		//Photo photo = new Photo(tempID, request.getParameter("inputFile"), serviceID, fileTyp, request.getParameter("inputFile").length(), file);
+		//photoDao.uploadPhoto(photo);
 		
 		
 	}

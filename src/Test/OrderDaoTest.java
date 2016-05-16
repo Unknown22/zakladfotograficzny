@@ -21,4 +21,12 @@ public class OrderDaoTest {
 		
 	}
 	
+	
+	@Test
+	public void getLastID(){
+		OrderDao dao = new OrderDao();
+		
+		dao.getLastIDOrder();
+	}
+	
 }

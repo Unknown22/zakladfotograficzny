@@ -132,5 +132,26 @@ public class OrderDao {
 		return order;
 
 	}
+	
+	public int getLastIDOrder(){
+		try {
+			Statement statement = connection.createStatement();
+			String st = "SELECT MAX(id_order) FROM `order`";			
+			ResultSet rs = statement.executeQuery(st);
+			
+			System.out.println("wpis: " +rs.next());
+			System.out.println("wpis: " +rs.getInt("MAX(id_order)"));
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		
+		return 0;
+		
+	}
 
 }
