@@ -13,6 +13,13 @@ public class Photo {
 	private File binaryFile;
 	
 	
+	/**
+	 * format zdjec
+	 * 1 - 9x13
+	 * 2 - 10x15
+	 * 3 - 13x18
+	 * 
+	 */
 	
 	public Photo() {
 	}
@@ -60,6 +67,8 @@ public class Photo {
 	public long getFileSize() {
 		return fileSize;
 	}
+	
+	
 	public void setFileSize(long l) {
 		this.fileSize = l;
 	}

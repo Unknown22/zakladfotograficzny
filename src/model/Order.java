@@ -56,12 +56,26 @@ public class Order {
 	public int getIdPayment() {
 		return idPayment;
 	}
+	
+	/**
+	 * 1 - przelew
+	 * 2 - gotowka
+	 * @param idPayment
+	 */
 	public void setIdPayment(int idPayment) {
 		this.idPayment = idPayment;
 	}
 	public int getIdShippment() {
 		return idShippment;
 	}
+	
+	/**
+	 * 
+	 * 1 - Kurier
+	 * 2 - list polecony
+	 * 3 - list eko 
+	 * @param idShippment
+	 */
 	public void setIdShippment(int idShippment) {
 		this.idShippment = idShippment;
 	}
