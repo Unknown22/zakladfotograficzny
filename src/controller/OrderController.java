@@ -99,26 +99,26 @@ public class OrderController extends HttpServlet{
 			sendingInt = 3;
 		}
 		
-		Order order = new Order(1, request.getParameter("textArea-add_info"), paymentInt, sendingInt, 0); //iddepartamentu trzeba poprawic
-		orderDao.createOrder(order);
-		int tempID = orderDao.getLastIDOrder();
-		
-		String service = request.getParameter("photoCorect");
-		int serviceID = 0;
-		if(service.equals("redEyes")){
-			serviceID= 1;
-		}
-		
-		String fileTyp = " ";
-		
-		String[] temp = request.getParameter("inputFile").split(".", 2);
-		fileTyp = temp[1];
+//		Order order = new Order(1, request.getParameter("textArea-add_info"), paymentInt, sendingInt, 0); //iddepartamentu trzeba poprawic
+//		orderDao.createOrder(order);
+//		int tempID = orderDao.getLastIDOrder();
+//		
+//		String service = request.getParameter("photoCorect");
+//		int serviceID = 0;
+//		if(service.equals("redEyes")){
+//			serviceID= 1;
+//		}
+//		
+//		String fileTyp = " ";
+//		
+//		String[] temp = request.getParameter("inputFile").split(".", 2);
+//		fileTyp = temp[1];
 		
 //		File file = new File(request.getParameter("inputFile"));
 		
 		//Photo photo = new Photo(tempID, request.getParameter("inputFile"), serviceID, fileTyp, request.getParameter("inputFile").length(), file);
 		//photoDao.uploadPhoto(photo);
-		
+		response.sendRedirect("confirmOrderSite.jsp");
 		
 	}
 	
