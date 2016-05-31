@@ -34,7 +34,7 @@ public class HelpDao {
 			ps.executeUpdate(); 
 			
 		} catch (SQLException e) {
-			System.out.println("Creating order sql error");
+			System.out.println("Creating help message sql error");
 			e.printStackTrace();
 			return false;
 		}
@@ -43,8 +43,6 @@ public class HelpDao {
 		
 		return true;
 	}
-	
-
 	
 	public Boolean deleteHelp(int id_help) {
         try {
@@ -84,7 +82,7 @@ public class HelpDao {
 	        }
 			
 		}catch (SQLException e) {
-			System.out.println("Error - download list of help messages");
+			System.out.println("Error with download list of help messages");
 	        e.printStackTrace();
 	    }
 		
