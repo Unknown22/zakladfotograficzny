@@ -141,6 +141,16 @@ body {
 	border-radius: 40px;
 }
 
+.helpListDiv, .regDiv {
+	background-color: rgba(0, 0, 0, 0.3);
+	width: 90%;
+	text-align: center;
+	margin: 0 auto;
+	color: white;
+	font-size: larger;
+	border-radius: 40px;
+}
+
 .regDiv {
 	background-color: rgba(0, 0, 0, 0.3);
 	width: 90%;

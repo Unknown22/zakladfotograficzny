@@ -13,13 +13,41 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import dao.HelpDao;
+import dao.OrderDao;
+import dao.UserDao;
 import model.Help;
 
 
 public class HelpController extends HttpServlet{
 	
+	private String LIST_HELP = "/listHelp.jsp";
+
+	
 	private static final long serialVersionUID = -6463179069092857254L;
 	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		String forward = "";
+		String action = request.getParameter("action");
+		HelpDao dao = new HelpDao();
+		System.out.println("CONTROLLER DO GET");
+
+		if (action.equals("listHelp")) {
+
+			forward = LIST_HELP;
+			request.setAttribute("help", dao.getAllHelpMessage());
+
+		}else if (action.equals("deleteHelp")) {
+			int id_help = Integer.parseInt(request.getParameter("id_help"));
+			dao.deleteHelp(id_help);
+			forward = LIST_HELP;
+			request.setAttribute("help", dao.getAllHelpMessage());
+		}
+
+		RequestDispatcher view = request.getRequestDispatcher(forward);
+		view.forward(request, response);
+	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
@@ -44,6 +72,6 @@ public class HelpController extends HttpServlet{
 		Help help  = new Help(email,message);
 		helpDao.sendHelp(help);
 		
-		response.sendRedirect("home.jsp");
+		response.sendRedirect("message_send.jsp");
 	}
 }
