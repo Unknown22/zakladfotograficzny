@@ -56,7 +56,7 @@ public class OrderDao {
 		try{
 			
 			Statement statement = connection.createStatement();
-            ResultSet rs = statement.executeQuery("SELECT * FROM `order` WHERE `order`.`id_status`=1");
+            ResultSet rs = statement.executeQuery("SELECT * FROM `order`");
             
             while (rs.next()){
             	
@@ -84,6 +84,39 @@ public class OrderDao {
 
 	}
 
+	public List<Order> getOrdersByClient(int id) {
+		List<Order> orders = new ArrayList<Order>();
+		
+		try{
+			
+			Statement statement = connection.createStatement();
+            ResultSet rs = statement.executeQuery("SELECT * FROM `order` WHERE `order`.`id_user`= " + id);
+            
+            while (rs.next()){
+            	
+            	Order order = new Order();
+            	
+            	order.setId(rs.getInt("id_order"));
+            	order.setIdStatus(rs.getInt("id_status"));
+            	order.setCreationTime(rs.getString("creation_time"));
+            	order.setLastEditTime(rs.getString("last_edit_time"));
+            	order.setAddedInfo(rs.getString("adding_information"));
+            	order.setIdPayment(rs.getInt("id_payment"));
+            	order.setIdShippment(rs.getInt("id_shippment"));
+            	order.setIdDepartment(rs.getInt("id_department"));
+            	
+            	orders.add(order);
+            	
+            }
+			
+		}catch (SQLException e) {
+			System.out.println("Error - download list of orders");
+            e.printStackTrace();
+        }
+		
+		return orders;
+
+	}
 	
 	public Boolean deleteOrder(int id_order) {
         try {

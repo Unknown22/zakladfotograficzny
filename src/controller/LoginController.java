@@ -13,7 +13,10 @@ import model.Login;
 
 public class LoginController extends HttpServlet {
 
-	private static final long serialVersionUID = 1L;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 6988619627621603507L;
 	private LoginDao dao;
 	private Login login;
 
