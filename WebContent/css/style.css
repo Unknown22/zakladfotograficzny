@@ -187,6 +187,17 @@ body {
 
 .table tbody tr:hover td, .table tbody tr:hover th {
     background-color: rgba(0, 0, 0, 0.5);
+    text-align: auto;
+}
+
+.table td{
+	 text-align:center; 
+	 border-right: solid 1px white; 
+  border-left: solid 1px white;
+}
+
+.table th{
+	 text-align:center; 
 }
 
 .error{
@@ -221,3 +232,9 @@ body {
 	padding-top: 30px;
 	
 }
+
+.containerOrder{
+	width: 90%;
+	margin: auto;
+}
+

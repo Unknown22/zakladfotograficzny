@@ -25,14 +25,14 @@
 	
 
 	<div class="userListDiv">
-		<div class="container">
+		<div class="containerOrder">
 		
 		<%@ include file="siteElements/manageDropDown.jsp"%>
 			
 			
 			
-			<h3>Zamowienia</h3>
-			<table id="tablepaging"  class="table table-hover">
+			<h3>Zamowienia</h3></br>
+			<table id="tablepaging"  class="table table-hover table-order">
 				<thead>
 					<tr>
 						<th>ID</th>
@@ -40,8 +40,8 @@
 						<th>Data utworzenia</th>
 						<th>Data edycji</th>
 						<th>Dodatkowe informacji</th>
-						<th>ID platnosci</th>
-						<th>ID wysylki</th>
+						<th>Platnosc</th>
+						<th>Wysylka</th>
 						<th>ID zakladu</th>
 						<th colspan=2>Akcje</th>
 					</tr>
@@ -61,8 +61,24 @@
 							<td><c:out value="${orders.creationTime}" /></td>
 							<td><c:out value="${orders.lastEditTime}" /></td>
 							<td><c:out value="${orders.addedInfo}" /></td>
-							<td><c:out value="${orders.idPayment}" /></td>
-							<td><c:out value="${orders.idShippment}" /></td>
+							
+							<c:if test = "${orders.idPayment == 1}">
+								<td><c:out value="Przelew"/></td>
+							</c:if>	
+							<c:if test = "${orders.idPayment == 2}">
+								<td><c:out value="Gotowka"/></td>
+							</c:if>	
+							
+							<c:if test = "${orders.idShippment == 1}">
+								<td><c:out value="Kurier"/></td>
+							</c:if>	
+							<c:if test = "${orders.idShippment == 2}">
+								<td><c:out value="List Polecony"/></td>
+							</c:if>	
+							<c:if test = "${orders.idShippment == 3}">
+								<td><c:out value="List Eko"/></td>
+							</c:if>	
+							
 							<td><c:out value="${orders.idDepartment}" /></td>
 							<td><a href="OrderController?action=delete&id_order=<c:out value="${orders.id}"/>"><buttontype="button" class="btn btn-danger btn-sm">Usun</button></a></td>
 							<td><a href="OrderController?action=showMore&id_order=<c:out value="${orders.id}"/> "/><buttontype="button" class="btn btn-warning btn-sm">Pokaz wiecej</button></a></td>
