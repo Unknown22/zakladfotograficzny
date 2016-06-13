@@ -1,6 +1,7 @@
 package model;
 
 public class PhotoService {
+	
 	private int id_service;
 	private int copies;
 	private int id_photo_format;
@@ -37,5 +38,11 @@ public class PhotoService {
 	}
 	public void setId_retouch(int id_retouch) {
 		this.id_retouch = id_retouch;
+	}
+	
+	@Override
+	public String toString() {
+		return "PhotoService [id_service=" + id_service + ", copies=" + copies + ", id_photo_format=" + id_photo_format
+				+ ", id_sealing=" + id_sealing + ", id_retouch=" + id_retouch + "]";
 	}
 }
