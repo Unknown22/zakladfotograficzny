@@ -74,15 +74,16 @@ public class BookKeepingController extends HttpServlet {
 		{
 			int id_service=photo.getIdService();
 			PhotoService phService=photoServiceDao.getPhotoServiceById(id_service);
+			int numOfCopies=phService.getCopies();
 			float tempPhFormat=phformatDao.getPhotoFormatPrice(phService.getId_photo_format());
-			phFormatIncome+=tempPhFormat;
-			income+=tempPhFormat;
+			phFormatIncome+=tempPhFormat*numOfCopies;
+			income+=tempPhFormat*numOfCopies;
 			float tempretouch=retouchDao.getRetouchPrice(phService.getId_photo_format());
-			retouchIncome+=tempretouch;
+			retouchIncome+=tempretouch;  //tu nie mnozymy razy ilosc kopii bo zdjecie przerabiamy tylko raz
 			income+=tempretouch;
 			float tempSealing=sealingDao.getSealingPrice(phService.getId_photo_format());
-			sealingIncome+=tempSealing;
-			income+=tempSealing;
+			sealingIncome+=tempSealing*numOfCopies;
+			income+=tempSealing*numOfCopies;
 		}
 		session.setAttribute("phFormatIncome", phFormatIncome);
 		session.setAttribute("retouchIncome", retouchIncome);
