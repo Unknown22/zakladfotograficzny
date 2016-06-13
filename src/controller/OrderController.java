@@ -32,6 +32,7 @@ public class OrderController extends HttpServlet{
 	
 	private String LIST_ORDERS = "/listOrders.jsp";
 	private String MORE_ORDER = "/moreOrder.jsp";
+	private String LIST_CLIENT_ORDERS = "/listClientOrders.jsp";
 	
 	public OrderController(){
 		super();
@@ -69,7 +70,7 @@ public class OrderController extends HttpServlet{
 		}
 	else if (action.equals("listclientOrders")){
 		System.out.println("clientOrders id: " + user.getId_user());
-		forward = LIST_ORDERS;
+		forward = LIST_CLIENT_ORDERS;
 		int idUser = user.getId_user();
 		request.setAttribute("orders", orderDao.getOrdersByClient(idUser));
 		

@@ -1,1 +1,1 @@
-<jsp:forward page="/OrderController?action=clientOrders"/>
+<jsp:forward page="/OrderController?action=listclientOrders"/>
