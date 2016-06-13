@@ -33,82 +33,26 @@
 			list = (PriceList) request.getAttribute("pricelist"); %>
 			
 			
+			
 			<h3>Cennik</h3></br>
-			<table id="tablepaging"  class="table table-hover table-order">
-				<thead>
-					<tr>
-						<th>Nazwa</th>
-						<th>Cena (PLN)</th>
-					</tr>
-				</thead>
-				<tbody>
-					
-						<tr>
-							<td>Platnosc - Przelew</td>
-							<td><%= list.getPaymentPrzelew() %></td>					
-						</tr>
-						
-						<tr>
-							<td>Platnosc - Gotowka</td>
-							<td><%= list.getPaymentGotowka() %></td>					
-						</tr>
-						
-						<tr>
-							<td>Transport - Kurier</td>
-							<td><%= list.getShipmentKurier() %></td>					
-						</tr>
-						
-						<tr>
-							<td>Transport - List Polecony</td>
-							<td><%= list.getShipmentPolecony() %></td>					
-						</tr>
-						
-						<tr>
-							<td>Transport - List Eko</td>
-							<td><%= list.getShipmentEko() %></td>					
-						</tr>
-						<tr>
-							<td>Format Zdjecia - 9x13</td>
-							<td><%= list.getPhotoFormat9x13() %></td>					
-						</tr>
-						<tr>
-							<td>Format Zdjecia - 10x15</td>
-							<td><%= list.getPhotoFormat10x15() %></td>					
-						</tr>
-						<tr>
-							<td>Format Zdjecia - 13x18</td>
-							<td><%= list.getPhotoFormat13x18() %></td>					
-						</tr>
-						
-						<tr>
-							<td>Retouch - Brak</td>
-							<td><%= list.getRetouchNone() %></td>					
-						</tr>
-						<tr>
-							<td>Retouch - Czerwone Oczy</td>
-							<td><%= list.getRetouchEyes() %></td>					
-						</tr>
-						
-						<tr>
-							<td>Retouch - Montage</td>
-							<td><%= list.getRetouchMontage() %></td>					
-						</tr>
-						
-						<tr>
-							<td>Laminowanie - Brak</td>
-							<td><%= list.getSealingNone() %></td>					
-						</tr>
-						<tr>
-							<td>Laminowanie - Calosc</td>
-							<td><%= list.getSealingFull() %></td>					
-						</tr>
-						
-						
-					
-				</tbody>
-			</table>
-				
-		<div id="pageNavPosition" style="padding-top: 20px" align="center">
+			<form action="PriceListController" method="POST" class="formPriceList">
+				Platnosc - Przelew: <input type="number" name="paymentPrzelew" value="<%= list.getPaymentPrzelew() %>"> <br />
+				Platnosc - Gotowka: <input type="number" name="paymentGotowka" value="<%= list.getPaymentGotowka() %>"> <br />
+				Transport - Kurier: <input type="number" name="shipmentKurier" value="<%= list.getShipmentKurier() %>"> <br />
+				Transport - List Polecony: <input type="number" name="shipmentPolecony" value="<%= list.getShipmentPolecony() %>"> <br />
+				Transport - List Eko: <input type="number" name="shipmentEko" value="<%= list.getShipmentEko() %>"> <br />
+				Format Zdjecia - 9x13: <input type="number" name="photoFormat9x13" value="<%= list.getPhotoFormat9x13() %>"> <br />
+				Format Zdjecia - 10x15: <input type="number" name="photoFormat10x15" value="<%= list.getPhotoFormat10x15() %>"> <br />
+				Format Zdjecia - 13x18: <input type="number" name="photoFormat13x18" value="<%= list.getPhotoFormat13x18() %>"> <br />
+				Retouch - Brak: <input type="number" name="retouchNone" value="<%= list.getRetouchNone() %>"> <br />
+				Retouch - Czerwone Oczy: <input type="number" name="retouchEyes" value="<%= list.getRetouchEyes() %>"> <br />
+				Retouch - Montage: <input type="number" name="retouchMontage" value="<%= list.getRetouchMontage() %>"> <br />
+				Laminowanie - Brak: <input type="number" name="sealingNone" value="<%= list.getSealingNone() %>"> <br />
+				Laminowanie - Calosc: <input type="number" name="sealingFull" value="<%= list.getSealingFull() %>"> <br />
+				<input type="submit" value="OK" />
+			</form>
+			
+			
 		</div>
 
 

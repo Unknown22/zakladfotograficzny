@@ -65,6 +65,27 @@ public class PriceList {
 		this.shipmentEko = cenaAll;
 	}
 
+	
+	
+	public PriceList(int paymentPrzelew, int paymentGotowka, int photoFormat9x13, int photoFormat10x15,
+			int photoFormat13x18, int retouchNone, int retouchEyes, int retouchMontage, int sealingNone,
+			int sealingFull, int shipmentKurier, int shipmentPolecony, int shipmentEko) {
+		super();
+		this.paymentPrzelew = paymentPrzelew;
+		this.paymentGotowka = paymentGotowka;
+		this.photoFormat9x13 = photoFormat9x13;
+		this.photoFormat10x15 = photoFormat10x15;
+		this.photoFormat13x18 = photoFormat13x18;
+		this.retouchNone = retouchNone;
+		this.retouchEyes = retouchEyes;
+		this.retouchMontage = retouchMontage;
+		this.sealingNone = sealingNone;
+		this.sealingFull = sealingFull;
+		this.shipmentKurier = shipmentKurier;
+		this.shipmentPolecony = shipmentPolecony;
+		this.shipmentEko = shipmentEko;
+	}
+
 	public int getPaymentPrzelew() {
 		return paymentPrzelew;
 	}

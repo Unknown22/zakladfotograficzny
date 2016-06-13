@@ -238,3 +238,14 @@ body {
 	margin: auto;
 }
 
+.formPriceList{
+}
+
+.formPriceList input{
+	color: black;
+	width: 50px;
+	margin: 5px;
+	margin-left: 20px;
+	
+	
+}
