@@ -26,9 +26,9 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-4">
-					<a href="#" ><img src="img/read.svg" /></a>
-					<h2>Galeria</h2>
-					<p>Zobacz nasze osiagniecia.</p>
+					<a href="aboutUs.jsp" ><img src="img/read.svg" /></a>
+					<h2>O nas</h2>
+					<p>Poznaj twórców</p>
 				</div>
 
 				<div class="col-md-4">
