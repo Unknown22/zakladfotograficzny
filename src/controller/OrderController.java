@@ -44,6 +44,7 @@ public class OrderController extends HttpServlet{
 		String action = request.getParameter("action");
 		OrderDao orderDao = new OrderDao();
 		System.out.println("CONTROLLER DO GET");
+		User user = new User();
 
 		if (action.equals("listOrders")){
 			
@@ -67,9 +68,9 @@ public class OrderController extends HttpServlet{
 			
 		}
 	else if (action.equals("listclientOrders")){
-		System.out.println("clientOrders id: " + request.getParameter("id_user"));
+		System.out.println("clientOrders id: " + user.getId_user());
 		forward = LIST_ORDERS;
-		int idUser = Integer.parseInt(request.getParameter("id_user"));
+		int idUser = user.getId_user();
 		request.setAttribute("orders", orderDao.getOrdersByClient(idUser));
 		
 	}
