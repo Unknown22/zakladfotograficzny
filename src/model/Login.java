@@ -3,6 +3,7 @@ package model;
 public class Login {
 	private String login;
 	private String password;
+	private static int authorization = -1;
 
 	public Login() {
 
@@ -27,6 +28,14 @@ public class Login {
 	@Override
 	public String toString() {
 		return "Login: " + login + " password: " + password;
+	}
+
+	public int getAuthorization() {
+		return authorization;
+	}
+
+	public void setAuthorization(int authorization) {
+		this.authorization = authorization;
 	}
 
 }
