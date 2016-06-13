@@ -99,15 +99,15 @@ public class OrderController extends HttpServlet{
 			sendingInt = 3;
 		}
 		
-//		Order order = new Order(1, request.getParameter("textArea-add_info"), paymentInt, sendingInt, 0); //iddepartamentu trzeba poprawic
-//		orderDao.createOrder(order);
-//		int tempID = orderDao.getLastIDOrder();
-//		
-//		String service = request.getParameter("photoCorect");
-//		int serviceID = 0;
-//		if(service.equals("redEyes")){
-//			serviceID= 1;
-//		}
+		Order order = new Order(1, request.getParameter("textArea-add_info"), paymentInt, sendingInt, 0); //iddepartamentu trzeba poprawic
+		orderDao.createOrder(order);
+		int tempID = orderDao.getLastIDOrder();
+		
+		String service = request.getParameter("photoCorect");
+		int serviceID = 0;
+		if(service.equals("redEyes")){
+			serviceID= 1;
+		}
 //		
 //		String fileTyp = " ";
 //		
