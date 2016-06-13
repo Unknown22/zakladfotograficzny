@@ -1,1 +1,1 @@
-<h1>ZAKLAD FOTOGRAFICZNY <b>ALPHA v0.3</b></h1>
+<h1>ZAKLAD FOTOGRAFICZNY <b>FotoRelax</b></h1>
