@@ -1,6 +1,5 @@
 package controller;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Enumeration;
@@ -54,6 +53,12 @@ public class OrderController extends HttpServlet{
 			int id_order = Integer.parseInt(request.getParameter("id_order"));
 			forward = MORE_ORDER;
 			request.setAttribute("order", orderDao.showOrder(id_order));
+		}else if (action.equals("clientOrders")){
+			System.out.println("clientOrders id: " + request.getParameter("id_user"));
+			forward = LIST_ORDERS;
+			int idUser = Integer.parseInt(request.getParameter("id_user"));
+			request.setAttribute("orders", orderDao.getOrdersByClient(idUser));
+			
 		}
 
 		RequestDispatcher view = request.getRequestDispatcher(forward);

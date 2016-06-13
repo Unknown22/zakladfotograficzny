@@ -23,7 +23,7 @@
 	</div>
 
 	<div class="userListDiv">
-		<div class="container">
+		<div class="containerOrder">
 		
 		<%@ include file="siteElements/manageDropDown.jsp"%>
 			

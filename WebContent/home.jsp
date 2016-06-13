@@ -19,10 +19,8 @@
 
 	<div class="jumb">
 		<%@ include file="siteElements/header.jsp"%>
-
 	</div>
 
- 
 
 	<div class="supporting">
 		<div class="container">
