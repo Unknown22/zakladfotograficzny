@@ -11,6 +11,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 //import jdk.internal.org.xml.sax.InputSource;
 import model.Order;
@@ -97,6 +99,38 @@ public class PhotoDao {
 		System.out.println("PhotoDao: download photo from db complete...");
 		return tempPhoto;
 
+	}
+	
+	
+	public List<Photo> getAllPhotos() {
+		
+		List<Photo> photos = new ArrayList<Photo>();
+		
+		try{
+			
+			Statement statement = connection.createStatement();
+            ResultSet rs = statement.executeQuery("SELECT * FROM `photo`");
+            
+            Photo tempPhoto;
+            while (rs.next()) {
+
+				tempPhoto = new Photo();
+
+				tempPhoto.setIdPhoto(rs.getInt("id_photo"));
+				tempPhoto.setIdOrder(rs.getInt("id_order"));
+				tempPhoto.setFileName(rs.getString("file_name"));
+				tempPhoto.setIdService(rs.getInt("id_service"));
+				tempPhoto.setFileType(rs.getString("file_type"));
+				//bez pobierania bina z obrazkiem bo do ksiegowosci niepotrzebny
+				//jesli by komuœ by³ potrzebny mo¿na dodaæ
+            }
+			
+		}catch (SQLException e) {
+			System.out.println("Error - download list of orders");
+            e.printStackTrace();
+        }
+		
+		return photos;
 	}
 	
 	
