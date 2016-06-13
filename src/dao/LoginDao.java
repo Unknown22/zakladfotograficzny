@@ -3,6 +3,7 @@ package dao;
 import java.sql.*;
 import model.Login;
 import model.Order;
+import model.User;
 import util.DbUtil;  
 
 public class LoginDao {
@@ -14,7 +15,7 @@ private Connection connection;
 	
 	public int authorization(Login login){  
 		boolean status=false; 
-		
+		User user = new User();
 		try{  
 
 		System.out.println("LoginDao: Validation...");
@@ -29,6 +30,7 @@ private Connection connection;
 		if(status = rs.next()){
 			System.out.println("Wyrzut z LoginDAO" + rs.getInt("id_account_type"));
         	login.setAuthorization(rs.getInt("id_account_type"));
+        	user.setId_user(rs.getInt("user_id"));
 		}
 
 		}catch(Exception e){
