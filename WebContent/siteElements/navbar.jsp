@@ -16,6 +16,7 @@
 		<%  } else if( session.getAttribute("currentSessionUser") != null  && user.getAuthorization() == 2) {
 			%>
 			
+		<li><a href="listClientOrders.jsp">Sprawdz swoje zamówienia</a></li>
 		<li><a href="logout.jsp">Wyloguj</a></li>
 			
 			<% 
