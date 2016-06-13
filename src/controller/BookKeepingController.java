@@ -47,12 +47,23 @@ public class BookKeepingController extends HttpServlet {
 		ShipmentDao shipmentDao=new ShipmentDao();
 		List <Order> orders=orderDao.getAllOrders();
 		float income=0;
+		float paymentIncome=0;
+		float shipmentIncome=0;
 		for(Order order : orders)
 		{
-			income+=paymentDao.getPaymentPrice(order.getIdPayment());
-			income+=shipmentDao.getshipmentPrice(order.getIdShippment());
+			float tempPay=paymentDao.getPaymentPrice(order.getIdPayment());
+			paymentIncome+=tempPay;
+			income+=tempPay;
+			float tempShip=shipmentDao.getshipmentPrice(order.getIdShippment());
+			shipmentIncome+=tempShip;
+			income+=tempShip;
 		}
+		session.setAttribute("paymentIncome", paymentIncome);
+		session.setAttribute("shipmentIncome", shipmentIncome);
 		
+		float phFormatIncome=0;
+		float retouchIncome=0;
+		float sealingIncome=0;
 		PhotoDao photoDao=new PhotoDao();
 		PhotoServiceDao photoServiceDao=new PhotoServiceDao();
 		PhotoFormatDao phformatDao=new PhotoFormatDao();
@@ -63,10 +74,19 @@ public class BookKeepingController extends HttpServlet {
 		{
 			int id_service=photo.getIdService();
 			PhotoService phService=photoServiceDao.getPhotoServiceById(id_service);
-			income+=phformatDao.getPhotoFormatPrice(phService.getId_photo_format());
-			income+=retouchDao.getRetouchPrice(phService.getId_photo_format());
-			income+=sealingDao.getSealingPrice(phService.getId_photo_format());
+			float tempPhFormat=phformatDao.getPhotoFormatPrice(phService.getId_photo_format());
+			phFormatIncome+=tempPhFormat;
+			income+=tempPhFormat;
+			float tempretouch=retouchDao.getRetouchPrice(phService.getId_photo_format());
+			retouchIncome+=tempretouch;
+			income+=tempretouch;
+			float tempSealing=sealingDao.getSealingPrice(phService.getId_photo_format());
+			sealingIncome+=tempSealing;
+			income+=tempSealing;
 		}
+		session.setAttribute("phFormatIncome", phFormatIncome);
+		session.setAttribute("retouchIncome", retouchIncome);
+		session.setAttribute("sealingIncome", sealingIncome);
 		session.setAttribute("income", income);
 		response.sendRedirect("bookKeeping.jsp");
 	}

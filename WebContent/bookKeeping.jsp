@@ -26,18 +26,28 @@
 
 	</div>
 
-	<div class="supporting">
+	<div class="userListDiv">
 		<div class="container">
 			
 			<h3>Ksiegowosc</h3>
 			<table id="tablepaging"  class="table table-hover">
 				<thead>
 					<tr>
-						<th>Wplywy</th>
+						<th>Obrot calkowity</th>
+						<th>Wysylki</th>
+						<th>Obsluga i ksiegowanie</th>
+						<th>Papier - rodzaj</th>
+						<th>Obrobka zdjec</th>
+						<th>Laminowanie</th>
 						</thead>
 				<tbody>
 						<tr>
-							<td><%out.println(session.getAttribute("income")); %></td>
+							<td>${income}</td>
+							<td>${shipmentIncome}</td>
+							<td>${paymentIncome}</td>
+							<td>${phFormatIncome}</td>
+							<td>${retouchIncome}</td>
+							<td>${sealingIncome}</td>
 						</tr>
 				</tbody>
 			</table>

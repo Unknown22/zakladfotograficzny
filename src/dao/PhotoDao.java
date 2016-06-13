@@ -104,7 +104,7 @@ public class PhotoDao {
 	}
 	
 	
-	public List<Photo> getAllPhotos() {
+	public List<Photo> getAllPhotos(){
 		
 		List<Photo> photos = new ArrayList<Photo>();
 		
@@ -117,14 +117,14 @@ public class PhotoDao {
             while (rs.next()) {
 
 				tempPhoto = new Photo();
-
+				
 				tempPhoto.setIdPhoto(rs.getInt("id_photo"));
 				tempPhoto.setIdOrder(rs.getInt("id_order"));
 				tempPhoto.setFileName(rs.getString("file_name"));
 				tempPhoto.setIdService(rs.getInt("id_service"));
 				tempPhoto.setFileType(rs.getString("file_type"));
-				//bez pobierania bina z obrazkiem bo do ksiegowosci niepotrzebny
-				//jesli by komuœ by³ potrzebny mo¿na dodaæ
+				
+				photos.add(tempPhoto);
             }
 			
 		}catch (SQLException e) {
