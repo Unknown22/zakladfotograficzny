@@ -20,7 +20,7 @@ public class LoginDaoTest {
 		login.setLogin("admin");
 		login.setPass("admin");
 		
-		assertTrue(dao.validate(login));
+		assertEquals(dao.authorization(login), 1);
 		
 	}
 	
@@ -33,7 +33,7 @@ public class LoginDaoTest {
 		login.setLogin("zaq1");
 		login.setPass("qwerty");
 		
-		assertFalse(dao.validate(login));
+		assertEquals(dao.authorization(login), 1);
 		
 	}
 
