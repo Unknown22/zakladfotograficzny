@@ -27,10 +27,12 @@ private Connection connection;
 		ps.setString(2, login.getPassword());  
 		              
 		ResultSet rs=ps.executeQuery();  		
-		if(status = rs.next()){
+		while(rs.next()){
+			        	user.setId_user(rs.getInt("user_id"));
+        	System.out.println("ID USER FROM LOGIN: " + rs.getInt("user_id"));
 			System.out.println("Wyrzut z LoginDAO" + rs.getInt("id_account_type"));
         	login.setAuthorization(rs.getInt("id_account_type"));
-        	user.setId_user(rs.getInt("user_id"));
+
 		}
 
 		}catch(Exception e){
