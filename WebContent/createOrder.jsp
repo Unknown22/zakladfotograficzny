@@ -29,7 +29,7 @@
 	<div class="createOrder">
 		<div class="container">
 			
-			<form action='OrderController' method="post" name="order_Form" class="form-order" >
+			<form action='OrderController' method="post" name="order_Form" class="form-order" enctype="multipart/form-data" >
 			  
 			  
     			<input type="file" class="form-control-file" name="inputFile" id="InputFile" >

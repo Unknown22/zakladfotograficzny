@@ -1,6 +1,7 @@
 package model;
 
 import java.io.File;
+import java.io.InputStream;
 
 public class Photo {
 
@@ -10,7 +11,7 @@ public class Photo {
 	private int idService;
 	private String fileType;
 	private long fileSize;
-	private File binaryFile;
+	private InputStream inputStream;
 	
 	
 	/**
@@ -25,14 +26,14 @@ public class Photo {
 	}
 	
 	
-	public Photo(int idOrder, String fileName, int idService, String fileType, int fileSize, File binaryFile) {
+	public Photo(int idOrder, String fileName, int idService, String fileType, long fileSize, InputStream inputstream) {
 		super();
 		this.idOrder = idOrder;
 		this.fileName = fileName;
 		this.idService = idService;
 		this.fileType = fileType;
 		this.fileSize = fileSize;
-		this.binaryFile = binaryFile;
+		this.inputStream = inputstream;
 	}
 	public int getIdPhoto() {
 		return idPhoto;
@@ -72,18 +73,22 @@ public class Photo {
 	public void setFileSize(long l) {
 		this.fileSize = l;
 	}
-	public File getBinaryFile() {
-		return binaryFile;
-	}
-	public void setBinaryFile(File binaryFile) {
-		this.binaryFile = binaryFile;
-	}
 
 
 	@Override
 	public String toString() {
 		return "Photo [idPhoto=" + idPhoto + ", idOrder=" + idOrder + ", fileName=" + fileName + ", idService="
-				+ idService + ", fileType=" + fileType + ", fileSize=" + fileSize / 1024 + " KB, binaryFile=" + binaryFile + "]";
+				+ idService + ", fileType=" + fileType + ", fileSize=" + fileSize / 1024 + " KB, inputStream=" + inputStream + "]";
+	}
+
+
+	public InputStream getInputStream() {
+		return inputStream;
+	}
+
+
+	public void setInputStream(InputStream inputStream) {
+		this.inputStream = inputStream;
 	}
 	
 	

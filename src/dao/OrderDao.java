@@ -167,13 +167,16 @@ public class OrderDao {
 	}
 	
 	public int getLastIDOrder(){
+		int id = 0;
 		try {
 			Statement statement = connection.createStatement();
 			String st = "SELECT MAX(id_order) FROM `order`";			
 			ResultSet rs = statement.executeQuery(st);
 			
-			System.out.println("wpis: " +rs.next());
-			System.out.println("wpis: " +rs.getInt("MAX(id_order)"));
+//			System.out.println("wpis: " +rs.next());
+			rs.next();
+			id = rs.getInt("MAX(id_order)");
+//			System.out.println("wpis: " +rs.getInt("MAX(id_order)"));
 			
 			
 		} catch (SQLException e) {
@@ -183,7 +186,7 @@ public class OrderDao {
 		
 		
 		
-		return 0;
+		return id;
 		
 	}
 

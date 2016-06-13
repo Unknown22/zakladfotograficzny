@@ -39,9 +39,7 @@ public class PhotoDao {
 			ps.setInt(3, photo.getIdService());
 			ps.setString(4, photo.getFileType());
 			ps.setLong(5, photo.getFileSize());
-
-			FileInputStream input = new FileInputStream(photo.getBinaryFile());
-			ps.setBinaryStream(6, input);
+			ps.setBlob(6, photo.getInputStream());
 
 			ps.executeUpdate();
 
@@ -85,7 +83,7 @@ public class PhotoDao {
 			      }
 			      
 			      fos.close();
-				tempPhoto.setBinaryFile(image);
+//				tempPhoto.setInputStream(image);
 				tempPhoto.setFileSize(image.length());
 				
 			}

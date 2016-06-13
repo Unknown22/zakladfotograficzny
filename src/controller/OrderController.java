@@ -1,16 +1,21 @@
 package controller;
 
+import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Enumeration;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.servlet.http.Part;
 
 import model.Order;
 import model.Photo;
@@ -20,6 +25,7 @@ import dao.PhotoDao;
 import dao.UserDao;
 
 
+@MultipartConfig(maxFileSize = 16177215)    // upload file's size up to 16MB
 public class OrderController extends HttpServlet{
 	
 	private static final long serialVersionUID = -6463179069092857254L;
@@ -68,6 +74,19 @@ public class OrderController extends HttpServlet{
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
+		InputStream inputStream = null; // input stream of the upload file
+		
+		Part filePart = request.getPart("inputFile");
+        if (filePart != null) {
+            // prints out some information for debugging
+            System.out.println(filePart.getName());
+            System.out.println(filePart.getSize());
+            System.out.println(filePart.getContentType());
+             
+            // obtains input stream of the upload file
+            inputStream = filePart.getInputStream();
+        }
+		
 		
 		System.out.println("\nPassed parameters:");
 		Enumeration<String> paramNames = request.getParameterNames();
@@ -113,16 +132,13 @@ public class OrderController extends HttpServlet{
 		if(service.equals("redEyes")){
 			serviceID= 1;
 		}
-//		
-//		String fileTyp = " ";
-//		
-//		String[] temp = request.getParameter("inputFile").split(".", 2);
-//		fileTyp = temp[1];
+
+
 		
 //		File file = new File(request.getParameter("inputFile"));
 		
-		//Photo photo = new Photo(tempID, request.getParameter("inputFile"), serviceID, fileTyp, request.getParameter("inputFile").length(), file);
-		//photoDao.uploadPhoto(photo);
+		Photo photo = new Photo(tempID, filePart.getName(), serviceID, filePart.getContentType(), filePart.getSize(), inputStream);
+		photoDao.uploadPhoto(photo);
 		response.sendRedirect("confirmOrderSite.jsp");
 		
 	}
