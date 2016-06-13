@@ -42,16 +42,23 @@ public class LoginController extends HttpServlet {
 		System.out.println("LoginController: received data: " + login);
 		System.out.println("LoginController: validate");
 
-		boolean validationStatus = dao.validate(login);
+		int authorizationStatus = dao.authorization(login);
 
-		System.out.println("validationStatus: " + validationStatus);
+		System.out.println("validationStatus: " + authorizationStatus);
 
-		if (validationStatus) {
-			System.out.println("LoginController: validate OK");
-
-			session.setAttribute("currentSessionUser", login.getLogin());
+		if (authorizationStatus == 1) {
+			System.out.println("LoginController: validate OK. Logged as ADMIN");
+			login.setAuthorization(1);
+			
+			session.setAttribute("currentSessionUser", login.getAuthorization());
 			response.sendRedirect("home.jsp");
-		} else {
+		} else if(authorizationStatus == 2){
+			System.out.println("LoginController: validate OK. Logged as USER");
+			login.setAuthorization(2);
+			session.setAttribute("currentSessionUser", login.getAuthorization());
+			response.sendRedirect("home.jsp");
+		}
+		else {
 			System.out.println("LoginController: validate notOK");
 			response.sendRedirect("login.jsp");
 		}

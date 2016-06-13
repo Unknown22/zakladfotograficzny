@@ -2,6 +2,7 @@ package dao;
 
 import java.sql.*;
 import model.Login;
+import model.Order;
 import util.DbUtil;  
 
 public class LoginDao {
@@ -11,7 +12,7 @@ private Connection connection;
 		connection = DbUtil.getConnection();
 	}
 	
-	public boolean validate(Login login){  
+	public int authorization(Login login){  
 		boolean status=false; 
 		
 		try{  
@@ -25,13 +26,16 @@ private Connection connection;
 		ps.setString(2, login.getPassword());  
 		              
 		ResultSet rs=ps.executeQuery();  		
-		status=rs.next();  
-		              
+		if(status = rs.next()){
+			System.out.println("Wyrzut z LoginDAO" + rs.getInt("id_account_type"));
+        	login.setAuthorization(rs.getInt("id_account_type"));
+		}
+
 		}catch(Exception e){
 		}  
 		
 		System.out.println("LoginDao: status: " + status);
-		return status;  
+		return login.getAuthorization();
 		  
 	}
 
