@@ -12,8 +12,10 @@ import javax.servlet.http.HttpSession;
 
 import dao.OrderDao;
 import dao.PaymentDao;
+import dao.PhotoDao;
 import dao.ShipmentDao;
 import model.Order;
+import model.Photo;
 
 
 @WebServlet("/BookKeepingController")
@@ -44,6 +46,14 @@ public class BookKeepingController extends HttpServlet {
 		{
 			income+=paymentDao.getPaymentPrice(order.getIdPayment());
 			income+=shipmentDao.getshipmentPrice(order.getIdShippment());
+		}
+		
+		PhotoDao photoDao=new PhotoDao();
+		List <Photo> photos=photoDao.getAllPhotos();
+		for(Photo photo: photos)
+		{
+			int id_service=photo.getIdService();
+			
 		}
 		session.setAttribute("income", income);
 		response.sendRedirect("bookKeeping.jsp");
