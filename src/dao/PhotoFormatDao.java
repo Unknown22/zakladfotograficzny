@@ -15,7 +15,7 @@ public class PhotoFormatDao {
 		connection = DbUtil.getConnection();
 	}
 	
-	public float getRetouchPrice(int id)
+	public float getPhotoFormatPrice(int id)
 	{
 		float income=0;
 		try{
