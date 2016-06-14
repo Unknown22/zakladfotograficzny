@@ -69,9 +69,9 @@ public class OrderController extends HttpServlet{
 			
 		}
 	else if (action.equals("listclientOrders")){
-		System.out.println("clientOrders id: " + user.getId_user());
+		System.out.println("clientOrders id: " + request.getParameter("id_user"));
 		forward = LIST_CLIENT_ORDERS;
-		int idUser = user.getId_user();
+		int idUser = Integer.parseInt(request.getParameter("id_user"));
 		request.setAttribute("orders", orderDao.getOrdersByClient(idUser));
 		
 	}

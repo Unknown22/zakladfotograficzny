@@ -30,6 +30,8 @@ private Connection connection;
 
 			System.out.println("Wyrzut z LoginDAO" + rs.getInt("id_account_type"));
         	login.setAuthorization(rs.getInt("id_account_type"));
+			System.out.println("Wyrzut z LoginDAO id_user" + rs.getInt("id_user"));
+
         	login.setMy_id(rs.getInt("id_user"));
 
 		}
