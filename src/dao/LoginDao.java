@@ -15,7 +15,6 @@ private Connection connection;
 	
 	public int authorization(Login login){  
 		boolean status=false; 
-		User user = new User();
 		try{  
 
 		System.out.println("LoginDao: Validation...");
@@ -27,11 +26,11 @@ private Connection connection;
 		ps.setString(2, login.getPassword());  
 		              
 		ResultSet rs=ps.executeQuery();  		
-		while(rs.next()){
-			        	user.setId_user(rs.getInt("user_id"));
-        	System.out.println("ID USER FROM LOGIN: " + rs.getInt("user_id"));
+		if( status = rs.next()){
+
 			System.out.println("Wyrzut z LoginDAO" + rs.getInt("id_account_type"));
         	login.setAuthorization(rs.getInt("id_account_type"));
+        	login.setMy_id(rs.getInt("id_user"));
 
 		}
 

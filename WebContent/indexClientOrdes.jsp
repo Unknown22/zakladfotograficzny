@@ -1,1 +1,1 @@
-<jsp:forward page="/OrderController?action=listclientOrders"/>
+<jsp:forward page="/OrderController?action=listclientOrders&id_user=<c:out value="18"/>"/>

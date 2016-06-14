@@ -4,6 +4,15 @@ public class Login {
 	private String login;
 	private String password;
 	private static int authorization = -1;
+	private static int my_id = 0;
+
+	public static int getMy_id() {
+		return my_id;
+	}
+
+	public static void setMy_id(int my_id) {
+		Login.my_id = my_id;
+	}
 
 	public Login() {
 
